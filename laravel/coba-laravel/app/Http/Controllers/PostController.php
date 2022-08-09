@@ -12,15 +12,15 @@ class PostController extends Controller
     {
         return view('posts', [
             'title' => 'Blog',
-            'posts' => Post::allPost()
+            'posts' => Post::all()
         ]);
     }
 
-    public function show($slug)
+    public function show(Post $post)
     {
         return view('post', [
             'title' => 'Blog',
-            'post' => Post::find($slug)
+            'post' => $post
         ]);
     }
 }
